@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTES API - WEB APPLICATION</title>
+
+    <link rel="stylesheet" href="./styles/style-sigup-and-login.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Login</h2>
+        </header>
+    
+        <form id="form-login">
+            <div class="form-control">
+                <input id="email" type="text" placeholder="Email">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small> Message of error</small>
+            </div>
+    
+            <div class="form-control">
+                <input id="password" type="password" placeholder="Password">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small> Message of error</small>
+            </div>
+            <button type="submit">SIGN UP</button>
+        </form>
+    </div>
+
+    <span>Doesn't have an account? <a href="./signup-page.html" target="_blank">Click here!</a></span>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+    <script src="./src/api.js"></script>
+    <script src="./src/log-in-scripts.js"></script>
+</body>
+</html>

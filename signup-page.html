@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOTES API - WEB APPLICATION</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/style-sigup-and-login.css">
 </head>
 <body>
     <div class="container">
@@ -13,40 +13,44 @@
             <h2>Create an account</h2>
         </header>
     
-        <form>
+        <form id="form-signup">
             <div class="form-control">
                 <input id="username" type="text" placeholder="Username">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
-                <span> Message of error</span>
+                <small> Message of error</small>
             </div>
     
             <div class="form-control">
                 <input id="email" type="text" placeholder="Email">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
-                <span> Message of error</span>
+                <small> Message of error</small>
             </div>
     
             <div class="form-control">
                 <input id="password" type="password" placeholder="Password">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
-                <span> Message of error</span>
+                <small> Message of error</small>
             </div>
     
             <div class="form-control">
                 <input id="confirm-password" type="password" placeholder="Confirm your password">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
-                <span> Message of error</span>
+                <small> Message of error</small>
             </div>
     
-            <button type="submit">Sign up</button>
+            <button type="submit">SIGN UP</button>
         </form>
     </div>
-
+    
+    <span>Already have an account? <a href="./login-page.html" target="_blank">Click here!</a></span>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-    <script src="./scripts.js"></script>
+    <script src="./src/api.js"></script>
+    <script src="./src/sign-up-scripts.js"></script>
 </body>
 </html>
