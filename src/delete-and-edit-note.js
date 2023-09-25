@@ -9,6 +9,7 @@ let noteId
 
 function showForm(button) {
     formUpdateNote.style.display = "flex"
+    
     noteId = button.id.split("?")[1]
 }
 
@@ -34,7 +35,7 @@ buttonSaveUpadateNote.addEventListener("click", (e) => {
     }
 
     if (formIsValid) {
-        updateNote()
+        updateNote(updatedNote)
 
         const formControl = formUpdateNote.querySelectorAll(".form-control")
 
@@ -45,10 +46,12 @@ buttonSaveUpadateNote.addEventListener("click", (e) => {
 })
 
 async function deleteNote(button) {
-    const noteId = button.id.split("?")[1]
     try {
 
+        const noteId = button.id.split("?")[1]
+
         const responseUser = confirm("Are you sure you want to delete this note?")
+        console.log(noteId);
 
         if (responseUser) {
             const response = await api.delete(`/notes/${noteId}`)
@@ -60,12 +63,14 @@ async function deleteNote(button) {
     }
 }
 
-async function updateNote() {
+async function updateNote(updatedNote) {
+    
+
     try {
         const responseUser = confirm("Are you sure you want to update this note?")
 
         if (responseUser) {
-            const response = await api.put(`/notes/${noteId}`)
+            const response = await api.put(`/notes/${noteId}`, updatedNote)
             window.location.reload()
         }
 

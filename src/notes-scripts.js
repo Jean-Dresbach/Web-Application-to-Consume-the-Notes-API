@@ -72,7 +72,7 @@ if (USER === null || USER.isLogged === false) {
 
         const title = document.getElementById("title")
         const description = document.getElementById("description")
-        const formIsValid = checkInputs()
+        const formIsValid = checkInputs(title, description)
 
         const newNote = {
             title: title.value,
@@ -242,14 +242,14 @@ if (USER === null || USER.isLogged === false) {
                 </div>
             <div id="delete-edit-container">
                 <button onclick="deleteNote(this)" id="delete?${note.id}" class="delete-button"><img src="./icons/delete.png"></img></button>
-                <button onclick="showForm(this)" id=edit?"${note.id}" class="edit-button"><img src="./icons/edit.png"></img></button>
+                <button onclick="showForm(this)" id="edit?${note.id}" class="edit-button"><img src="./icons/edit.png"></img></button>
             </div>  
         `
 
         notesContainer.appendChild(NOTE)
     }
 
-    function checkInputs() {
+    function checkInputs(title, description) {
         const titleValue = title.value
         const descriptionValue = description.value
 
