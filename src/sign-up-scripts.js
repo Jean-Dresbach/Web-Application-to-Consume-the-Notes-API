@@ -25,8 +25,8 @@ async function signup(newUser) {
     try {
         const response = await api.post("/users/signup", newUser)
         
+        console.log(response);
         window.location.replace("/login-page.html")
-    
     } catch (error) {
         checkEmail(error); 
     }

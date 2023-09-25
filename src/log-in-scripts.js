@@ -20,17 +20,16 @@ formLogIn.addEventListener("submit", (e) => {
 async function login(user) {
     try {
         const response = await api.post("/users/login", user)
-        const userId = response.data.user.id
+        const USER = response.data.user
         
-        localStorage.setItem("userId", userId)
+        localStorage.setItem("USER", JSON.stringify(USER))
+
         window.location.replace("/notes-page.html") 
 
     } catch (error) {
         checkPasswordAndEmail(error)
     }
 }
-
-
 function checkPasswordAndEmail(error) {
     const messageAPI = error.response.data.message
     console.log(messageAPI);

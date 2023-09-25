@@ -10,6 +10,7 @@
 <body>
     <header>
         <h2>NOTES API - WEB APPLICATION</h2>
+        <button id="logout"><img src="./icons/logout.png" alt="logout icon"></button>
     </header>
 
     <nav>
@@ -17,11 +18,18 @@
             <button id="prev-button">Prev</button>
             <button id="next-button">Next</button>
         </div>
-
-        <input type="number" placeholder="Notes per page">
+        <div id="container-per-page">
+            <label for="per-page">Notes per page:</label>
+            <input id="per-page" type="number" min="1" max="20" value="10">
+        </div>
     </nav>
     
-    <button id="button-create-note"><img id="plus-icon" src="./icons/plus.png" alt="plus icon">Create note</button>
+    <div id="container-select-and-create-note">
+        <select id="select-pages">
+            <option id="disabled-option" value="" disabled>Select Page</option>
+        </select>
+        <button id="button-create-note"><img id="plus-icon" src="./icons/plus.png" alt="plus icon">Create note</button>
+    </div>
 
     <form id="form-create-note"> 
         <div class="form-control">
@@ -44,11 +52,29 @@
         </div>
     </form>
 
-    <main id="notes-container">
-        <div class="note">
-            <h4>Title aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaa</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum magnam mollitia reprehenderit debitis quis voluptatibus obcaecati suscipit, nesciunt accusamus a quam culpa pariatur, sunt vel repellat voluptates nemo temporibus. Cum!</p>
+    <form id="form-update-note"> 
+        <div class="form-control">
+            <input id="update-title" type="text" placeholder="New Title">
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small> Message of error</small>
         </div>
+
+        <div class="form-control">
+            <textarea id="update-description" rows="4" cols="36"  placeholder="New Description"></textarea>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small> Message of error</small>
+        </div>
+        
+        <div>
+            <button type="submit" id="update-save-note">Update Note</button>
+            <button type="reset" id="update-reset-form">Cancel</button>
+        </div>
+    </form>
+
+    <main id="notes-container">
+
     </main>
 
     <footer>
@@ -59,5 +85,6 @@
     <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
     <script src="./src/api.js"></script>
     <script src="./src/notes-scripts.js"></script>
+    <script src="./src/delete-and-edit-note.js"></script>
 </body>
 </html>
