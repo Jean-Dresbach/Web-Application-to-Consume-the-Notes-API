@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTES API - WEB APPLICATION</title>
+
+    <link rel="stylesheet" href="./styles/style-notes.css">
+</head>
+<body>
+    <header>
+        <h2>NOTES API - WEB APPLICATION</h2>
+        <button id="logout"><img src="./icons/logout.png" alt="logout icon"></button>
+    </header>
+
+    <nav>
+        <div>
+            <button id="prev-button">Prev</button>
+            <button id="next-button">Next</button>
+        </div>
+        <div id="container-per-page">
+            <label for="per-page">Notes per page:</label>
+            <input id="per-page" type="number" min="1" max="20" value="10">
+        </div>
+    </nav>
+    
+    <div id="container-select-and-create-note">
+        <select id="select-pages">
+            <option id="disabled-option" value="" disabled>Select Page</option>
+        </select>
+        <button id="button-create-note"><img id="plus-icon" src="./icons/plus.png" alt="plus icon">Create note</button>
+    </div>
+
+    <form id="form-create-note"> 
+        <div class="form-control">
+            <input id="title" type="text" placeholder="New Title">
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small> Message of error</small>
+        </div>
+
+        <div class="form-control">
+            <textarea id="description" rows="4" cols="36"  placeholder="New Description"></textarea>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small> Message of error</small>
+        </div>
+        
+        <div>
+            <button type="submit" id="save-note">Save Note</button>
+            <button type="reset" id="reset-form">Cancel</button>
+        </div>
+    </form>
+
+    <form id="form-update-note"> 
+        <div class="form-control">
+            <input id="update-title" type="text" placeholder="New Title">
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small> Message of error</small>
+        </div>
+
+        <div class="form-control">
+            <textarea id="update-description" rows="4" cols="36"  placeholder="New Description"></textarea>
+            <i class="fas fa-exclamation-circle"></i>
+            <i class="fas fa-check-circle"></i>
+            <small> Message of error</small>
+        </div>
+        
+        <div>
+            <button type="submit" id="update-save-note">Update Note</button>
+            <button type="reset" id="update-reset-form">Cancel</button>
+        </div>
+    </form>
+
+    <main id="notes-container">
+
+    </main>
+
+    <footer>
+        <small>Developed by Jean Rafael Dresbach</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+    <script src="./src/api.js"></script>
+    <script src="./src/notes-scripts.js"></script>
+    <script src="./src/delete-and-edit-note.js"></script>
+</body>
+</html>
