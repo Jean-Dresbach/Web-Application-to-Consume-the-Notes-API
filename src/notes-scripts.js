@@ -300,8 +300,8 @@ function createNote(note) {
                 <p>${note.description}</p>
                 </div>
             <div id="delete-edit-container">
-                <button onclick="deleteNote('${note.id}')" id="delete?" class="delete-button"><img src="./icons/delete.png"></img></button>
-                <button onclick="showForm('${note.id}')" id="edit?" class="edit-button"><img src="./icons/edit.png"></img></button>
+                <button onclick="deleteNote('${note.id}')" class="delete-button"><img src="./icons/delete.png"></img></button>
+                <button onclick="showForm('${note.id}')" class="edit-button"><img src="./icons/edit.png"></img></button>
             </div>  
         `
 
