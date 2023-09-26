@@ -1,11 +1,11 @@
 const USER = JSON.parse(localStorage.getItem("USER"))
-console.log(USER);
 
 if (USER === null || USER.isLogged === false) {
     alert("User not found! Please create an account and login to access your notes!")
 
     window.location.replace("/signup-page.html")
 }
+
 const buttonLogout = document.getElementById("logout")
 
 const perPageInput = document.getElementById("per-page")
@@ -24,7 +24,6 @@ const buttonCancelFormUpadate = document.getElementById("update-reset-form")
 const buttonSaveUpadateNote = document.getElementById("update-save-note")
 
 let noteId
-let updatedNote
 let per_page
 let totalOfNotes
 
@@ -113,7 +112,7 @@ buttonSaveUpadateNote.addEventListener("click", (e) => {
     const description = document.getElementById("update-description")
     const formIsValid = checkInputs(title, description)
 
-    updatedNote = {
+    const updatedNote = {
         title: title.value,
         description: description.value,
     }
@@ -166,7 +165,6 @@ async function postNewNote(newNote) {
 async function deleteNote(noteId) {
     try {
         const responseUser = confirm("Are you sure you want to delete this note?")
-        console.log(noteId);
 
         if (responseUser) {
             const response = await api.delete(`/notes/${noteId}`)
@@ -226,7 +224,6 @@ function showNotes(notes) {
     notesContainer.innerHTML = ""
 
     notes.forEach(note => {
-        console.log(note);
         createNote(note)
     })
 }
